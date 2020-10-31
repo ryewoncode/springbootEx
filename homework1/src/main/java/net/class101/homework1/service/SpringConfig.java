@@ -11,17 +11,17 @@ import net.class101.homework1.repository.ItemRepository;
 
 @Configuration
 public class SpringConfig {
-    private final ItemRepository itemRepository;
+    // private final ItemRepository itemRepository;
 
-    @Autowired
-    public SpringConfig(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
-    }
+    // @Autowired
+    // public SpringConfig(ItemRepository itemRepository) {
+    // this.itemRepository = itemRepository;
+    // }
 
-    @Bean
-    public ItemService itemService() {
-        return new ItemService(itemRepository);
-    }
+    // @Bean
+    // public ItemService itemService() {
+    // return new ItemService(itemRepository);
+    // }
 
     // @Bean
     // public ItemRepository itemRepository() {

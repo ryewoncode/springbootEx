@@ -1,0 +1,32 @@
+package net.class101.homework1.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name = "items")
+@Getter @Setter
+public class Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(name = "ITEM_NO")
+    private String itemNo;
+    @Column(name = "KIND")
+    private String kind;
+    @Column(name = "NAME")
+    private String name;
+    @Column(name = "PRICE")
+    private int price;
+    @Column(name = "STOCK")
+    private int stock;
+    
+
+}

@@ -1,0 +1,98 @@
+package net.class101.homework1.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import net.class101.homework1.domain.Item;
+
+class ItemServiceTest {
+	@Autowired
+	ItemService itemService;
+
+	@BeforeEach
+	public void BeforeEach() {
+		// itemService = new ItemService();
+	}
+
+	@AfterEach
+	public void AfterEach() {
+	}
+
+	/**
+	 * 상품 데이터 입력
+	 */
+	@Test
+	void inputItem() {
+		// given
+//		Item item = new Item();
+//		item.setItemNo("16374");
+//		item.setKind("KLASS");
+//		item.setName("스마트스토어로 월 100만원 만들기, 평범한 사람이 돈을 만드는 비법");
+//		item.setPrice(151950);
+//		item.setStock(99999);
+
+		// when
+		// String itemNo = itemService.inputItem(item);
+
+		// then
+		// Item findItem = itemService.findOne(itemNo).get();
+		// 0Assertions.assertThat(item.getName()).isEqualTo(findItem.getName());
+	}
+
+	/**
+	 * 상품번호 중복 예외처리
+	 */
+	@Test
+	public void duplicateItemException() {
+		// given
+//		Item item1 = new Item();
+//		item1.setItemNo("26825");
+//
+//		Item item2 = new Item();
+//		item2.setItemNo("26825");
+
+		// when
+		// itemService.inputItem(item1);
+		// IllegalStateException e = assertThrows(IllegalStateException.class, () ->
+		// itemService.inputItem(item2));
+		// Assertions.assertThat(e.getMessage()).isEqualTo("이미 존재하는 상품번호 입니다.");
+
+		// try {
+		// itemService.inputItem(item2);
+		// fail();
+		// } catch (IllegalStateException e) {
+		// Assertions.assertThat(e.getMessage()).isEqualTo("이미 존재하는 상품번호 입니다.");
+		// }
+
+		// then
+	}
+
+	@Test
+	void findItems() {
+		Item item = new Item();
+		item.setItemNo("16374");
+		item.setKind("KLASS");
+		item.setName("스마트스토어로 월 100만원 만들기, 평범한 사람이 돈을 만드는 비법");
+		item.setPrice(151950);
+		item.setStock(99999);
+
+		// when
+		// itemService.inputItem(item);
+		List<Item> rsItem = itemService.findItems();
+		for (Item items : rsItem) {
+			System.out.println(items.getItemNo() + ", " + items.getKind() + ", " + items.getName() + ", "
+					+ items.getPrice() + ", " + items.getStock());
+		}
+	}
+
+
+	@Test
+	void findOne() {
+
+	}
+}

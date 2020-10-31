@@ -4,6 +4,10 @@ public class Invoker {
     private ICommand _command;
 
     // 필요한 기능을 인지로 받는다.
+    public Invoker() {
+    }
+
+    // 필요한 기능을 인지로 받는다.
     public Invoker(ICommand command) {
         setCommand(command);
     }

@@ -1,0 +1,14 @@
+package net.class101.homework1.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import net.class101.homework1.domain.Item;
+
+public interface ItemRepository extends JpaRepository<Item, Long> {
+	@Query("select i from ITEMS i")
+    List<Item> findAll();
+}
